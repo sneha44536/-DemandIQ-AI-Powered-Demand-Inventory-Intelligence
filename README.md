@@ -1,29 +1,33 @@
 # 🚀 DemandIQ — AI-Powered Demand & Inventory Intelligence
 
-An end-to-end **AI-powered Demand, Inventory, Product Recommendation & Visual Space Intelligence System** that combines **Machine Learning, Generative AI, RAG, Computer Vision, and What-If Analysis** to help businesses make smarter product and inventory decisions.
+An end-to-end **AI-powered Demand, Inventory, Product Recommendation & Visual Space Intelligence System** combining **Machine Learning, Generative AI, RAG, Computer Vision, Recommendation Systems, and What-If Analysis** to support smarter business decisions.
 
 ---
 
 # 📌 Project Overview
 
-**DemandIQ** is an intelligent business decision-support platform designed to predict product demand, identify inventory risks, recommend products, and provide AI-powered business insights.
+**DemandIQ** is an intelligent business decision-support platform designed to predict product demand, identify inventory risks, recommend relevant products, analyze uploaded space images, and provide AI-powered business insights.
 
-The system combines:
+The system follows the principle:
 
-* 📈 Machine Learning for demand prediction
-* 📦 Inventory intelligence and stock-risk analysis
-* 🛍️ Product recommendation
-* 🤖 Generative AI business assistant
-* 📚 RAG-based knowledge retrieval
+> **ML predicts what is likely to happen, while GenAI explains why it is happening and recommends what the business should consider doing.**
+
+The platform combines:
+
+* 📈 Demand Forecasting
+* 📦 Inventory Intelligence
+* ⚠️ Stock-Out Risk Prediction
+* 📊 Overstock Detection
+* 🛍️ Product Recommendation
+* 🤖 Generative AI Business Assistant
+* 📚 RAG-based Knowledge Retrieval
 * 🧠 LangChain / LangGraph
-* 🔎 Vector database for semantic search
-* 🖼️ AI-powered image-based space analysis
-* 💡 What-if business analysis
-* ⚡ FastAPI backend
-* 📊 Power BI analytics
-* ☁️ Cloud-ready deployment
-
-The goal is to move from simply **predicting what will happen** to helping businesses understand **why it happens and what action should be taken**.
+* 🔎 Vector Database
+* 🖼️ Image-Based Space Analysis
+* 💡 What-If Analysis
+* ⚡ FastAPI
+* 📊 Power BI
+* ☁️ Cloud-ready Deployment
 
 ---
 
@@ -39,28 +43,28 @@ Businesses still face challenges such as:
 * Difficulty understanding ML predictions
 * Manual product selection
 * Lack of personalized recommendations
-* Difficulty analyzing product documentation
-* Limited decision support for business users
-* No intelligent way to analyze a customer's room/space and recommend suitable products
+* Difficulty accessing business knowledge
+* Limited decision support
+* No intelligent image-based product recommendation
 
-Therefore, DemandIQ combines **ML + GenAI + RAG + Computer Vision** into a single intelligent platform.
+DemandIQ addresses these challenges by combining **ML + GenAI + RAG + Recommendation Systems + Computer Vision** into a single intelligent platform.
 
 ---
 
 # 🎯 Objective
 
-The main objective of DemandIQ is to develop an intelligent AI system that can:
+The primary objective of DemandIQ is to build an intelligent AI-powered system that can:
 
 1. Predict future product demand
-2. Identify stock-out and overstock risks
-3. Recommend relevant products
-4. Explain ML predictions using Generative AI
-5. Retrieve information from business documents using RAG
-6. Perform what-if analysis
-7. Analyze uploaded room/space images
-8. Suggest suitable products for the detected space
-9. Provide personalized product recommendations
-10. Provide actionable business insights through an AI assistant
+2. Identify stock-out risk
+3. Detect potential overstock situations
+4. Recommend relevant products
+5. Explain ML predictions using Generative AI
+6. Retrieve relevant information using RAG
+7. Perform what-if business analysis
+8. Analyze uploaded room/workspace images
+9. Suggest suitable products for a detected space
+10. Provide actionable business recommendations
 
 ---
 
@@ -72,15 +76,29 @@ Most traditional ML projects stop at:
 
 DemandIQ goes one step further:
 
-> **"Here is the prediction, here is why it happened, here is the relevant business knowledge, and here is what you should consider doing."**
+> **"Here is the prediction, why it happened, the relevant business knowledge, and what action should be considered."**
 
-This makes DemandIQ a **decision-support system rather than only a prediction model**.
+The project integrates:
 
-The combination of:
+```text
+Machine Learning
+       +
+Recommendation Systems
+       +
+Generative AI
+       +
+RAG
+       +
+Vector Database
+       +
+Computer Vision
+       +
+What-If Analysis
+       =
+AI-Powered Business Decision Support
+```
 
-**ML + GenAI + RAG + Computer Vision + Recommendation System + What-If Analysis**
-
-makes the project significantly more practical for real-world business applications.
+This makes the project more than a simple prediction model. It is designed as an **end-to-end intelligent decision-support platform**.
 
 ---
 
@@ -97,7 +115,7 @@ The ML model predicts future product demand using features such as:
 * Discount
 * Season
 * Month
-* Inventory level
+* Inventory
 * Lead time
 * Customer/order information
 
@@ -122,27 +140,26 @@ The system analyzes predicted demand, current inventory, lead time, and historic
 Example:
 
 ```text
-Product: P001
-
 Current Inventory: 700 units
 Predicted Demand: 1,250 units
-Stock-Out Risk: HIGH
+
+Risk:
+HIGH STOCK-OUT RISK
 
 Recommendation:
-Consider replenishing inventory before the expected demand period.
+Review replenishment requirements before the
+expected demand period.
 ```
 
 ---
 
 # 3️⃣ Overstock Detection
 
-DemandIQ can identify products where inventory may significantly exceed expected demand.
+The system identifies products where inventory may significantly exceed expected demand.
 
 Example:
 
 ```text
-Product: P023
-
 Current Inventory: 2,500 units
 Expected Demand: 900 units
 
@@ -150,41 +167,40 @@ Risk:
 Potential Overstock
 
 Recommendation:
-Consider reducing future procurement or using promotional strategies.
+Review future procurement and promotional strategies.
 ```
 
 ---
 
-# 4️⃣ Product Recommendation Engine
+# 4️⃣ Product Recommendation
 
-The system recommends products based on:
+The recommendation engine suggests products using:
 
 * Product similarity
 * Product category
-* Customer requirements
-* Historical purchasing patterns
 * Product attributes
-* User preferences
+* Customer preferences
+* Historical purchasing patterns
+* TF-IDF/product feature similarity
 
 Example:
 
 ```text
-User Product:
-Office Chair A
+Input Product:
+Product A
 
-Recommended:
-1. Ergonomic Chair B
-2. Adjustable Desk C
-3. Lumbar Support D
+Recommended Products:
+
+1. Product B
+2. Product C
+3. Product D
 ```
 
 ---
 
 # 5️⃣ 🖼️ AI-Powered Visual Space Recommendation
 
-One of the advanced features of DemandIQ is **image-based product recommendation**.
-
-The customer can upload an image of their:
+DemandIQ can allow customers to upload an image of their:
 
 * Room
 * Office
@@ -193,55 +209,47 @@ The customer can upload an image of their:
 * Bedroom
 * Other usable spaces
 
-The AI analyzes the image and understands the available environment.
+The system analyzes the image and identifies relevant visual information about the space.
 
-### Example
-
-User uploads:
+### Workflow
 
 ```text
-Room Image
+Uploaded Image
       ↓
 Computer Vision / Vision LLM
       ↓
-Detects:
-- Room type
-- Available space
-- Existing furniture
-- Approximate layout
-- Style/context
+Space & Object Understanding
       ↓
-Recommendation Engine
+Available Space / Style Analysis
+      ↓
+Product Recommendation Engine
       ↓
 Suitable Product Suggestions
 ```
-
-The system can then suggest products that may fit the space.
 
 Example:
 
 ```text
 Detected Space:
-Modern Office
+Modern Workspace
 
 Suggested Products:
 
-✓ Ergonomic Office Chair
+✓ Ergonomic Chair
 ✓ Compact Work Desk
 ✓ Storage Cabinet
-✓ Meeting Table
 ✓ Desk Lamp
 ```
 
-The GenAI layer can explain the recommendation:
+The GenAI assistant can also explain the recommendation:
 
-> "This compact desk is recommended because the uploaded workspace appears to have limited floor space. Its dimensions and design are better suited for the available area."
+> "The compact desk is recommended because the available workspace appears limited and the product is better suited to the detected layout."
 
 ---
 
 # 6️⃣ 🤖 GenAI Business Assistant
 
-DemandIQ includes a conversational AI assistant that allows business users to ask questions about products, inventory, predictions, and business policies.
+The GenAI assistant allows users to ask questions about demand, inventory, products, and business policies.
 
 Example:
 
@@ -253,35 +261,37 @@ Which products are at high stock-out risk next month?
 
 The system combines:
 
-**ML Prediction + Business Data + RAG Knowledge**
-
-and generates an explanation.
+```text
+ML Predictions
+      +
+Business Data
+      +
+RAG Knowledge
+      ↓
+Generative AI
+      ↓
+Business Explanation
+```
 
 Example response:
 
 ```text
 Product P001 has a high stock-out risk.
 
-Predicted demand:
-1,250 units
+Predicted Demand: 1,250 units
+Current Inventory: 700 units
+Lead Time: 20 days
 
-Current inventory:
-700 units
-
-Lead time:
-20 days
-
-The system recommends reviewing replenishment
-requirements before the expected demand period.
+Recommendation:
+Review replenishment requirements before
+the expected demand period.
 ```
 
 ---
 
 # 7️⃣ 📚 RAG-Based Knowledge Assistant
 
-DemandIQ can use **Retrieval-Augmented Generation (RAG)** to retrieve relevant information from business documents.
-
-Possible knowledge sources:
+DemandIQ can retrieve information from business documents such as:
 
 * Product catalogs
 * Product specifications
@@ -289,39 +299,39 @@ Possible knowledge sources:
 * Supplier information
 * Business reports
 * Product manuals
-* Demand planning guidelines
-* Return policies
+* Demand-planning guidelines
 * Procurement guidelines
+* Return policies
 
-### RAG Workflow
+### RAG Pipeline
 
 ```text
 Business Documents
-       ↓
+        ↓
 Document Loading
-       ↓
+        ↓
 Text Chunking
-       ↓
+        ↓
 Embeddings
-       ↓
+        ↓
 Vector Database
-       ↓
-Semantic Retrieval
-       ↓
+        ↓
+Semantic Search
+        ↓
 Relevant Context
-       ↓
+        ↓
 LLM
-       ↓
-Grounded Answer
+        ↓
+Grounded Response
 ```
 
-This helps reduce hallucinations and allows the assistant to answer questions using relevant business knowledge.
+RAG helps the LLM generate responses based on relevant business information rather than relying only on its general knowledge.
 
 ---
 
 # 8️⃣ 🔥 What-If Analysis
 
-DemandIQ allows users to explore possible business scenarios.
+DemandIQ allows users to simulate possible business scenarios.
 
 Example:
 
@@ -331,9 +341,9 @@ User:
 What happens if we increase the product price by 10%?
 ```
 
-The system modifies the relevant input features and sends them through the ML model.
+The system modifies the relevant input and runs the ML model again.
 
-Example output:
+Example:
 
 ```text
 Current Price:
@@ -352,7 +362,176 @@ Estimated Demand Change:
 -13.6%
 ```
 
-The GenAI assistant can then explain the result and provide a business recommendation.
+GenAI can then explain the result and provide a business recommendation.
+
+---
+
+# 📊 Machine Learning Model Evaluation
+
+Model performance is evaluated using appropriate metrics based on the ML task.
+
+## 📈 Demand Prediction — Regression Metrics
+
+Since demand prediction is a **regression problem**, the following metrics are used:
+
+### MAE — Mean Absolute Error
+
+Measures the average absolute difference between actual and predicted demand.
+
+```text
+MAE = average(|Actual - Predicted|)
+```
+
+Lower MAE indicates better performance.
+
+### MSE — Mean Squared Error
+
+Penalizes larger prediction errors more heavily.
+
+```text
+MSE = average((Actual - Predicted)²)
+```
+
+Lower MSE is better.
+
+### RMSE — Root Mean Squared Error
+
+RMSE is the square root of MSE and represents the error in the same unit as demand.
+
+```text
+RMSE = √MSE
+```
+
+Lower RMSE indicates better performance.
+
+### R² Score
+
+Measures how much variation in demand is explained by the model.
+
+```text
+R² = 1 - (SSres / SStotal)
+```
+
+A value closer to **1.0** indicates stronger predictive performance.
+
+### MAPE — Mean Absolute Percentage Error
+
+Measures prediction error as a percentage.
+
+```text
+MAPE = mean(|Actual - Predicted| / Actual) × 100
+```
+
+Lower MAPE is better.
+
+---
+
+# 🏆 Model Performance
+
+Add the actual values obtained from the trained model here:
+
+| Metric   |             Result |
+| -------- | -----------------: |
+| MAE      |  **[Your Result]** |
+| MSE      |  **[Your Result]** |
+| RMSE     |  **[Your Result]** |
+| R² Score |  **[Your Result]** |
+| MAPE     | **[Your Result]%** |
+
+> **Note:** The values should be updated with the actual evaluation results from the final trained model.
+
+---
+
+# 📊 Classification Evaluation
+
+If stock-out/overstock prediction is implemented as a classification problem, the system can be evaluated using:
+
+### Accuracy
+
+Percentage of correctly classified observations.
+
+### Precision
+
+Measures how many predicted positive cases were actually positive.
+
+### Recall
+
+Measures how many actual positive cases were successfully detected.
+
+### F1-Score
+
+Harmonic mean of precision and recall.
+
+### Confusion Matrix
+
+Used to visualize:
+
+```text
+                 Predicted
+               Positive Negative
+
+Actual Positive    TP       FN
+
+Actual Negative    FP       TN
+```
+
+For stock-out detection, **recall is particularly important** because missing an actual stock-out can have a significant business impact.
+
+---
+
+# 📈 Recommendation System Evaluation
+
+The recommendation engine can be evaluated using:
+
+* Precision@K
+* Recall@K
+* Hit Rate@K
+* Recommendation coverage
+* Similarity score
+
+Example:
+
+```text
+Top-K Recommendations
+
+K = 5
+
+Precision@5
+Recall@5
+Hit Rate@5
+```
+
+These metrics help determine whether the recommended products are relevant to users.
+
+---
+
+# 🧪 Model Validation
+
+The ML pipeline can include:
+
+* Train/Test Split
+* Cross-Validation
+* Feature Engineering
+* Hyperparameter Tuning
+* Error Analysis
+* Residual Analysis
+* Model Comparison
+
+Possible models:
+
+```text
+Baseline Model
+      ↓
+Linear Regression
+      ↓
+Random Forest
+      ↓
+Gradient Boosting / XGBoost
+      ↓
+Best Performing Model
+```
+
+The final model is selected based on evaluation metrics rather than simply choosing the most complex algorithm.
 
 ---
 
@@ -370,7 +549,7 @@ The GenAI assistant can then explain the result and provide a business recommend
             │       Computer Vision       │
             │              │              │
             │              ▼              │
-            │      Space Understanding    │
+            │       Space Understanding   │
             │              │              │
             └──────────────┼──────────────┘
                            ▼
@@ -402,7 +581,7 @@ The GenAI assistant can then explain the result and provide a business recommend
 
 ---
 
-# 🔄 Complete Workflow
+# 🔄 Complete Project Workflow
 
 ```text
 Sales / Inventory / Product Data
@@ -411,14 +590,18 @@ Sales / Inventory / Product Data
               ↓
        Feature Engineering
               ↓
-        Machine Learning
+        Exploratory Analysis
               ↓
- ┌────────────┼─────────────┐
- ↓            ↓             ↓
-Demand     Stock Risk    Product
+        Model Training
+              ↓
+       Model Evaluation
+              ↓
+ ┌────────────┼──────────────┐
+ ↓            ↓              ↓
+Demand     Stock Risk     Product
 Prediction  Prediction   Recommendation
- ↓            ↓             ↓
- └────────────┼─────────────┘
+ ↓            ↓              ↓
+ └────────────┼──────────────┘
               ↓
        Prediction Results
               ↓
@@ -430,7 +613,7 @@ Power BI    GenAI Assistant   Image Analysis
              ↓                   ↓
             RAG              Product Matching
              ↓                   ↓
-        Vector Database       Recommendations
+       Vector Database       Recommendations
              ↓
             LLM
              ↓
@@ -454,13 +637,15 @@ Power BI    GenAI Assistant   Image Analysis
 
 * Scikit-learn
 * XGBoost
-* Regression Models
-* Classification Models
-* Recommendation Algorithms
+* Regression
+* Classification
+* Recommendation Systems
+* Feature Engineering
+* Model Evaluation
 
 ## 🧠 Generative AI
 
-* Large Language Models (LLMs)
+* Large Language Models
 * RAG
 * LangChain
 * LangGraph
@@ -475,7 +660,7 @@ Power BI    GenAI Assistant   Image Analysis
 ## 👁️ Computer Vision
 
 * OpenCV
-* Vision-based AI / Vision LLM
+* Vision Models / Vision LLM
 
 ## ⚡ Backend
 
@@ -497,7 +682,6 @@ Power BI    GenAI Assistant   Image Analysis
 
 * Docker
 * AWS / Azure
-* Cloud-ready architecture
 
 ---
 
@@ -547,7 +731,7 @@ DemandIQ/
 
 The backend is developed using **FastAPI**.
 
-Example endpoint:
+Current endpoint:
 
 ```text
 GET /predict-demand/{product_id}
@@ -559,34 +743,27 @@ Example:
 GET /predict-demand/P001
 ```
 
-The API returns the predicted demand for the selected product.
-
-Future APIs can include:
+Future endpoints:
 
 ```text
 /predict-demand/{product_id}
-
 /stock-risk/{product_id}
-
 /recommend-products/{product_id}
-
 /inventory-insights
-
 /analyze-image
-
 /ask-ai
-
 /what-if
 ```
 
 ---
 
-# 📊 Dashboard
+# 📊 Power BI Dashboard
 
-Power BI can be used to visualize:
+The Power BI layer can provide business-level visualization of:
 
 * Historical sales
 * Predicted demand
+* Actual vs predicted demand
 * Inventory levels
 * Stock-out risk
 * Overstock products
@@ -594,12 +771,11 @@ Power BI can be used to visualize:
 * Regional demand
 * Revenue trends
 * Recommendation insights
+* Model performance
 
 ---
 
 # 💡 Example Business Questions
-
-DemandIQ can help answer questions such as:
 
 ### Demand
 
@@ -635,35 +811,39 @@ DemandIQ can help answer questions such as:
 
 ---
 
-# 🌟 What Makes This Project Different?
+# 🌟 What Makes DemandIQ Different?
 
-DemandIQ combines multiple AI capabilities into one system:
+DemandIQ integrates multiple AI capabilities into one platform:
 
 ```text
-                 DemandIQ
-                    │
-       ┌────────────┼────────────┐
-       ↓            ↓            ↓
-   Predict       Recommend     Explain
-       │            │            │
-       ↓            ↓            ↓
-     ML Model   Recommendation   GenAI
-                    │            │
-                    ↓            ↓
-              Image Analysis    RAG
-                    │            │
-                    └─────┬──────┘
-                          ↓
-                   Business Decision
+             DemandIQ
+                 │
+     ┌───────────┼────────────┐
+     ↓           ↓            ↓
+  Predict     Recommend    Explain
+     │           │            │
+     ↓           ↓            ↓
+    ML       Recommendation  GenAI
+                 │            │
+                 ↓            ↓
+            Image Analysis    RAG
+                 │            │
+                 └──────┬─────┘
+                        ↓
+                Business Decision
 ```
 
-Instead of building separate ML, recommendation, and GenAI demos, DemandIQ integrates them into a single business-oriented platform.
+The system therefore connects:
+
+**Prediction → Explanation → Recommendation → Action**
+
+instead of providing only a numerical prediction.
 
 ---
 
-# 🏆 Why This Is Valuable for Businesses
+# 🏆 Business Value
 
-The system can help businesses:
+DemandIQ can help businesses:
 
 * Reduce stock-outs
 * Reduce excess inventory
@@ -671,84 +851,31 @@ The system can help businesses:
 * Improve product discovery
 * Personalize recommendations
 * Reduce manual analysis
-* Provide explainable AI insights
-* Improve decision-making
-* Enable AI-assisted business operations
+* Understand ML predictions
+* Retrieve business knowledge quickly
+* Support data-driven decisions
+* Improve customer experience
 
 ---
 
-# 🎯 Real-World Applications
+# 🌍 Real-World Applications
 
 * Retail analytics
 * E-commerce
 * Supply chain management
 * Inventory optimization
-* Product recommendation
 * Demand forecasting
+* Product recommendation
 * Smart shopping assistants
 * Workspace planning
-* Interior/product recommendations
+* Visual product recommendation
 * Business intelligence
 
 ---
 
-# 🔮 Future Improvements
+# 🚀 Current Project Status
 
-* Fine-tuned domain-specific LLM
-* Advanced multimodal AI
-* Real-time inventory monitoring
-* Customer personalization
-* Voice-based AI assistant
-* Agentic AI workflow
-* Automated procurement recommendations
-* Supplier optimization
-* Advanced forecasting models
-* Real-time streaming data
-* AWS production deployment
-* CI/CD pipeline
-* Model monitoring and LLMOps
-
----
-
-# ☁️ Deployment
-
-The application is designed to be deployed as a cloud-based AI service.
-
-Possible deployment architecture:
-
-```text
-User
- ↓
-Frontend
- ↓
-AWS / Azure
- ↓
-FastAPI
- ↓
-ML Models
- ↓
-RAG Pipeline
- ↓
-Vector Database
- ↓
-LLM
- ↓
-AI Response
-```
-
-### Deployment URL
-
-**Live Demo:** Coming Soon
-
-**API Documentation:** Coming Soon
-
-**Power BI Dashboard:** Coming Soon
-
----
-
-# 📈 Project Status
-
-### Currently Completed
+### Completed
 
 * [x] Dataset generation
 * [x] Sales data processing
@@ -759,16 +886,22 @@ AI Response
 * [x] Inventory recommendation logic
 * [x] Trained ML model
 * [x] FastAPI backend
-* [x] API endpoint for demand prediction
-* [ ] GenAI assistant
+* [x] Demand prediction API
+* [x] Model evaluation framework
+* [x] GitHub project setup
+
+### In Progress / Planned
+
+* [ ] Advanced GenAI assistant
 * [ ] RAG pipeline
-* [ ] Vector database integration
+* [ ] Pinecone/FAISS integration
 * [ ] Image-based space analysis
 * [ ] Visual product recommendation
 * [ ] What-if analysis
 * [ ] Power BI dashboard
 * [ ] Docker deployment
 * [ ] AWS/Azure deployment
+* [ ] LLMOps and monitoring
 
 ---
 
@@ -822,26 +955,86 @@ http://127.0.0.1:8000/docs
 
 # 🔐 Environment Variables
 
-Create a `.env` file for sensitive credentials such as:
+Create a `.env` file for sensitive credentials:
 
 ```text
 OPENAI_API_KEY=
 PINECONE_API_KEY=
 ```
 
-**Never commit API keys or secrets to GitHub.**
+Never commit API keys, passwords, or other secrets to GitHub.
 
 ---
 
-# 📌 Key Learning Outcomes
+# ☁️ Deployment
 
-Through DemandIQ, the project demonstrates practical experience in:
+The final architecture is designed for cloud deployment:
+
+```text
+User
+ ↓
+Frontend
+ ↓
+AWS / Azure
+ ↓
+FastAPI
+ ↓
+ML Models
+ ↓
+Recommendation Engine
+ ↓
+RAG Pipeline
+ ↓
+Vector Database
+ ↓
+LLM
+ ↓
+AI Business Response
+```
+
+### Deployment URLs
+
+**Live Demo:** Coming Soon
+
+**API:** Coming Soon
+
+**Swagger Documentation:** Coming Soon
+
+**Power BI Dashboard:** Coming Soon
+
+---
+
+# 🔮 Future Improvements
+
+* Fine-tuned domain-specific LLM
+* Advanced multimodal AI
+* Real-time inventory monitoring
+* Customer personalization
+* Voice-based AI assistant
+* Agentic AI workflow
+* Automated procurement recommendations
+* Supplier optimization
+* Advanced forecasting models
+* Real-time streaming data
+* AWS production deployment
+* CI/CD pipeline
+* Model monitoring
+* LLMOps
+* AI-powered visual room redesign
+* Personalized spatial product recommendations
+
+---
+
+# 📚 Key Learning Outcomes
+
+This project demonstrates practical experience in:
 
 * Machine Learning
 * Regression
 * Classification
 * Recommendation Systems
 * Feature Engineering
+* Model Evaluation
 * Data Analysis
 * FastAPI
 * REST APIs
@@ -865,8 +1058,4 @@ Through DemandIQ, the project demonstrates practical experience in:
 
 Data Science | Machine Learning | Generative AI | RAG
 
-This project demonstrates the integration of **Machine Learning, Generative AI, Recommendation Systems, Computer Vision, and Business Intelligence** into an end-to-end intelligent decision-support platform.
-
-
-
-
+DemandIQ demonstrates the integration of **Machine Learning, Generative AI, Recommendation Systems, Computer Vision, and Business Intelligence** into an end-to-end intelligent decision-support platform.
