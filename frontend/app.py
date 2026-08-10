@@ -1,4 +1,3 @@
-
 import streamlit as st
 import requests
 
@@ -11,66 +10,18 @@ st.set_page_config(
 API_URL = "http://127.0.0.1:8000"
 
 st.title("🪑 AI Furniture Intelligence System")
-
 st.write(
-    "Demand Prediction • Inventory Recommendation • "
-    "Product Recommendation"
+    "Demand Prediction • Inventory Recommendation • Product Recommendation"
 )
-
-# ============================================================
-# MODEL PERFORMANCE
-# ============================================================
-
-st.header("📊 Model Performance")
-
-try:
-    evaluation_response = requests.get(
-        f"{API_URL}/model-evaluation",
-        timeout=5
-    )
-
-    if evaluation_response.status_code == 200:
-
-        evaluation = evaluation_response.json()
-
-        col1, col2, col3 = st.columns(3)
-
-        col1.metric(
-            "MAE",
-            evaluation["MAE"]
-        )
-
-        col2.metric(
-            "RMSE",
-            evaluation["RMSE"]
-        )
-
-        col3.metric(
-            "R² Score",
-            evaluation["R2_percentage"]
-        )
-
-    else:
-        st.error("Could not load model evaluation.")
-
-except requests.exceptions.RequestException:
-    st.warning(
-        "Backend API is not running. "
-        "Start the backend and refresh the page."
-    )
-
 
 # ============================================================
 # PRODUCT ID
 # ============================================================
 
-st.header("🔎 Product")
-
 product_id = st.text_input(
     "Enter Product ID",
     placeholder="Example: P001"
 )
-
 
 # ============================================================
 # DEMAND PREDICTION
@@ -91,27 +42,19 @@ if st.button("Predict Demand"):
             data = response.json()
 
             if "error" in data:
-
                 st.error(data["error"])
 
             else:
-
                 st.metric(
                     "Predicted Demand",
                     f"{data['predicted_demand']} units"
                 )
 
         else:
-
-            st.error(
-                "Demand prediction API error."
-            )
+            st.error("Demand prediction API error.")
 
     else:
-
-        st.warning(
-            "Please enter a Product ID."
-        )
+        st.warning("Please enter a Product ID.")
 
 
 # ============================================================
@@ -133,7 +76,6 @@ if st.button("Check Inventory"):
             data = response.json()
 
             if "error" in data:
-
                 st.error(data["error"])
 
             else:
@@ -142,7 +84,7 @@ if st.button("Check Inventory"):
 
                 col1.metric(
                     "Current Inventory",
-                    data["current_inventory"]
+                    data["current_stock"]
                 )
 
                 col2.metric(
@@ -158,8 +100,7 @@ if st.button("Check Inventory"):
                 if data["reorder_status"] == "REORDER":
 
                     st.warning(
-                        "⚠️ Inventory is low. "
-                        "Reorder recommended."
+                        "⚠️ Inventory is low. Reorder recommended."
                     )
 
                 else:
@@ -169,16 +110,10 @@ if st.button("Check Inventory"):
                     )
 
         else:
-
-            st.error(
-                "Inventory API error."
-            )
+            st.error("Inventory API error.")
 
     else:
-
-        st.warning(
-            "Please enter a Product ID."
-        )
+        st.warning("Please enter a Product ID.")
 
 
 # ============================================================
@@ -208,7 +143,6 @@ if st.button("Get Recommendations"):
             data = response.json()
 
             if "error" in data:
-
                 st.error(data["error"])
 
             else:
@@ -223,13 +157,7 @@ if st.button("Get Recommendations"):
                 )
 
         else:
-
-            st.error(
-                "Recommendation API error."
-            )
+            st.error("Recommendation API error.")
 
     else:
-
-        st.warning(
-            "Please enter a Product ID."
-        )
+        st.warning("Please enter a Product ID.")

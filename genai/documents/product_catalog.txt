@@ -1,0 +1,57 @@
+AI Furniture Product Catalog
+
+P001 - Executive Office Chair
+Category: Office Chair
+Material: Leather
+Style: Modern
+Color: Black
+Price: 12500
+Description: Ergonomic executive chair suitable for offices and workstations.
+
+P002 - Modular Workstation
+Category: Workstation
+Material: Wood and Metal
+Style: Modern
+Color: Walnut
+Price: 45000
+Description: Modular workstation suitable for multiple employees.
+
+P003 - Office Storage Unit
+Category: Storage
+Material: Engineered Wood
+Style: Modern
+Color: Brown
+Price: 18000
+Description: Office storage cabinet for documents and equipment.
+
+P004 - Conference Table
+Category: Conference Table
+Material: Wood
+Style: Premium
+Color: Dark Brown
+Price: 55000
+Description: Large conference table suitable for meetings.
+
+P005 - Visitor Chair
+Category: Office Chair
+Material: Fabric
+Style: Modern
+Color: Blue
+Price: 7500
+Description: Comfortable visitor chair for reception and meeting areas.
+
+P006 - Manager Desk
+Category: Office Desk
+Material: Wood
+Style: Executive
+Color: Walnut
+Price: 32000
+Description: Premium desk designed for managers and executives.
+
+P007 - Bookshelf
+Category: Storage
+Material: Wood
+Style: Modern
+Color: Oak
+Price: 14000
+Description: Office bookshelf for files, books and decorative items.
