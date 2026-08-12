@@ -4,6 +4,9 @@ An end-to-end **AI-powered Demand, Inventory, Product Recommendation & Visual Sp
 
 ---
 
+
+
+
 # 📌 Project Overview
 
 **DemandIQ** is an intelligent business decision-support platform designed to predict product demand, identify inventory risks, recommend relevant products, analyze uploaded space images, and provide AI-powered business insights.
