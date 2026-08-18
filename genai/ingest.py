@@ -3,6 +3,7 @@ import os
 from langchain_community.document_loaders import TextLoader
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
 # ============================================================
@@ -40,7 +41,23 @@ loader = TextLoader(
 
 documents = loader.load()
 
-print(f"Documents loaded: {len(documents)}")
+print(f"Original documents loaded: {len(documents)}")
+
+
+# ============================================================
+# SPLIT PRODUCTS
+# ============================================================
+
+print("Splitting product catalog...")
+
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=50
+)
+
+chunks = text_splitter.split_documents(documents)
+
+print(f"Product chunks created: {len(chunks)}")
 
 
 # ============================================================
@@ -61,14 +78,19 @@ embeddings = HuggingFaceEmbeddings(
 print("Creating Chroma vector database...")
 
 vectorstore = Chroma.from_documents(
-    documents=documents,
+    documents=chunks,
     embedding=embeddings,
     persist_directory=VECTORSTORE_PATH
 )
 
 
+# ============================================================
+# COMPLETED
+# ============================================================
+
 print("==========================================")
 print("RAG INGESTION COMPLETED")
 print("==========================================")
-print("Vector database created successfully!")
-print(f"Location: {VECTORSTORE_PATH}")
+
+print(f"Products/Chunks stored: {len(chunks)}")
+print(f"Vector database: {VECTORSTORE_PATH}")

@@ -3,7 +3,7 @@ import os
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
 # ============================================================
@@ -44,7 +44,7 @@ vectorstore = Chroma(
 )
 
 retriever = vectorstore.as_retriever(
-    search_kwargs={"k": 4}
+    search_kwargs={"k": 10}
 )
 
 
@@ -54,10 +54,14 @@ retriever = vectorstore.as_retriever(
 
 print("Loading local GenAI model...")
 
-generator = pipeline(
-    "text-generation",
-    model="google/flan-t5-base",
-    max_new_tokens=200
+MODEL_NAME = "google/flan-t5-base"
+
+tokenizer = AutoTokenizer.from_pretrained(
+    MODEL_NAME
+)
+
+model = AutoModelForSeq2SeqLM.from_pretrained(
+    MODEL_NAME
 )
 
 
@@ -91,6 +95,84 @@ say that the information is not available in the catalog.
 
 def ask_question(question):
 
+    question_lower = question.lower()
+
+    # ========================================================
+    # SPECIAL: LIST ALL MATERIALS
+    # ========================================================
+
+    if "material" in question_lower and (
+        "list" in question_lower
+        or "available" in question_lower
+        or "all" in question_lower
+    ):
+
+        documents = vectorstore.similarity_search(
+            "furniture materials",
+            k=65
+        )
+
+        materials = set()
+
+        for document in documents:
+            text = document.page_content
+
+            if "Material:" in text:
+                material = text.split("Material:")[1].split("Style:")[0].strip()
+                materials.add(material)
+
+        if materials:
+            result = "Available Materials:\n"
+
+            for i, material in enumerate(sorted(materials), 1):
+                result += f"{i}. {material}\n"
+
+            return result
+
+        return "No material information found in the catalog."
+
+    # ========================================================
+    # SPECIAL: LIST ALL PRODUCTS
+    # ========================================================
+
+    if "product" in question_lower and (
+        "list" in question_lower
+        or "available" in question_lower
+        or "all" in question_lower
+    ):
+
+        documents = vectorstore.similarity_search(
+            "furniture products",
+            k=65
+        )
+
+        products = []
+
+        for document in documents:
+            text = document.page_content
+
+            if " - " in text:
+                first_part = text.split(" - ")[0].strip()
+
+                if first_part.startswith("P"):
+                    products.append(first_part)
+
+        products = sorted(set(products))
+
+        if products:
+            result = "Available Furniture Products:\n"
+
+            for product in products:
+                result += f"- {product}\n"
+
+            return result
+
+        return "No products found in the catalog."
+
+    # ========================================================
+    # NORMAL RAG QUESTION
+    # ========================================================
+
     documents = retriever.invoke(question)
 
     context = "\n\n".join(
@@ -103,13 +185,24 @@ def ask_question(question):
         question=question
     )
 
-    response = generator(
-        formatted_prompt
-    )[0]["generated_text"]
+    inputs = tokenizer(
+        formatted_prompt,
+        return_tensors="pt",
+        truncation=True,
+        max_length=512
+    )
+
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=150
+    )
+
+    response = tokenizer.decode(
+        outputs[0],
+        skip_special_tokens=True
+    )
 
     return response
-
-
 # ============================================================
 # CHAT INTERFACE
 # ============================================================
@@ -135,5 +228,7 @@ while True:
 
     print()
     print("AI:")
+
     print(ask_question(question))
+
     print()
