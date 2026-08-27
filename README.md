@@ -3,6 +3,10 @@
 An end-to-end **AI-powered Demand, Inventory, Product Recommendation & Visual Space Intelligence System** combining **Machine Learning, Generative AI, RAG,  Recommendation Systems, and What-If Analysis** to support smarter business decisions.
 
 ---
+
+
+
+
 # 📌 Project Overview
 
 **DemandIQ** is an intelligent business decision-support platform designed to predict product demand, identify inventory risks, recommend relevant products, analyze uploaded space images, and provide AI-powered business insights.
