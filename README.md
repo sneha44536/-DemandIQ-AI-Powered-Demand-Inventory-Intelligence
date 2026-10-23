@@ -1048,9 +1048,7 @@ This project demonstrates practical experience in:
 * Power BI
 * Docker
 * Cloud Deployment
-
 ---
-
 # 👩‍💻 Author
 
 **Sneha Pise**
