@@ -12,6 +12,9 @@ The system follows the principle:
 
 The platform combines:
 
+
+
+
 * 📈 Demand Forecasting
 * 📦 Inventory Intelligence
 * ⚠️ Stock-Out Risk Prediction
