@@ -11,10 +11,6 @@ The system follows the principle:
 > **ML predicts what is likely to happen, while GenAI explains why it is happening and recommends what the business should consider doing.**
 
 The platform combines:
-
-
-
-
 * 📈 Demand Forecasting
 * 📦 Inventory Intelligence
 * ⚠️ Stock-Out Risk Prediction
