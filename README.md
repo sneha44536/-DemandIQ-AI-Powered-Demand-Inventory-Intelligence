@@ -868,7 +868,8 @@ DemandIQ can help businesses:
 * Visual product recommendation
 * Business intelligence
 
----
+-------------------
+
 
 # 🚀 Current Project Status
 
