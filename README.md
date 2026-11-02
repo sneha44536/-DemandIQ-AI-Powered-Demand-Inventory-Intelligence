@@ -95,10 +95,8 @@ What-If Analysis
 AI-Powered Business Decision Support
 ```
 
-This makes the project more than a simple prediction model. It is designed as an **end-to-end intelligent decision-support platform**.
-
+This makes the project more than a simple prediction model. It is designed as an **end-to-end intelligent decision-support platform**
 ---
-
 # 🧠 Core AI Capabilities
 
 ## 1️⃣ Demand Prediction
