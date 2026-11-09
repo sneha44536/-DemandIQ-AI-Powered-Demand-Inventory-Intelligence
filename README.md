@@ -165,8 +165,7 @@ Potential Overstock
 
 Recommendation:
 Review future procurement and promotional strategies.
-```
-
+``
 ---
 
 # 4️⃣ Product Recommendation
